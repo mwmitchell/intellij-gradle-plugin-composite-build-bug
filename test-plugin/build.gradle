@@ -1,0 +1,24 @@
+plugins {
+  id 'java-gradle-plugin'
+  id 'java'
+}
+
+group 'org.test'
+version '0.0.1'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile gradleApi()
+}
+
+gradlePlugin {
+  plugins {
+    testPlugin {
+      id = 'test-plugin'
+      implementationClass = 'org.test.TestPlugin'
+    }
+  }
+}

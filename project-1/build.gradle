@@ -1,0 +1,11 @@
+plugins {
+  id 'test-plugin' apply false
+}
+
+allprojects {
+  apply plugin: 'test-plugin'
+}
+
+subprojects {
+  apply plugin: 'java-library'
+}

@@ -1,0 +1,20 @@
+pluginManagement {
+
+  repositories {
+    //mavenLocal()
+  }
+
+  resolutionStrategy {
+    eachPlugin {
+      println "resolving ${requested.id.id} dependency"
+      if(requested.id.id == "test-plugin") {
+        useModule("org.test:test-plugin:0.0.1")
+      }
+    }
+  }
+}
+
+includeBuild 'test-plugin'
+includeBuild 'project-1'
+
+rootProject.name = 'intellij-composite-build-bug'

@@ -47,3 +47,5 @@ Could not find method api() for arguments [{group=com.google.guava, name=guava, 
 ```
 
 The `api` method comes from the `java-library` plugin, which is added [here](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/build.gradle#L10).
+
+Now [uncomment these lines](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/library-a/build.gradle#L1-L5), and IntelliJ will load the composite build project without error.

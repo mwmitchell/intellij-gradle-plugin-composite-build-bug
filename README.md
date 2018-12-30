@@ -50,6 +50,8 @@ Could not find method api() for arguments [{group=com.google.guava, name=guava, 
 
 The `api` method comes from the `java-library` plugin, which is added [here](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/build.gradle#L10).
 
-Now [uncomment these lines](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/library-a/build.gradle#L1-L5), and IntelliJ will load the composite build project without error.
+After publishing the test-plugin to maven local: `./gradlew -p test-plugin publishToMavenLocal`, IntelliJ will succesfully load the project. But when attempting to run `publishToMavenLocal` from IntelliJ, a new error is thrown: `Included build in ./intellij-composite-build-bug/test-plugin has the same root project name 'test-plugin' as the main build.`
+
+If you [uncomment these lines](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/library-a/build.gradle#L1-L5), and IntelliJ will load the composite build project without error. Obviously not a work around, but may help in debugging the issue.
 
 Another way to get IntelliJ to "pass", is to comment-out the plugin definition in the `plugins` block, as well as the `apply plugin: 'test-plugin', [here](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/build.gradle#L2) and [here](https://github.com/mwmitchell/intellij-gradle-plugin-composite-build-bug/blob/master/project-1/build.gradle#L6). Not a work around, but may be a valuable clue as to what's going on in terms of project loading.

@@ -1,6 +1,8 @@
 # Test Project
 
-This project shows a problem related to Gradle's composite build support, a Gradle custom plugin, and IntelliJ. In summary, the project works entirely fine from the CLI:
+This project shows a problem related to Gradle's composite build support, a Gradle custom plugin, and IntelliJ. StackOverflow post is [here](https://stackoverflow.com/questions/53975344/gradle-composite-build-with-custom-gradle-plugin-fails-in-intellij-could-not-f).
+
+In summary, the project works entirely fine from the CLI:
 
 ```
 ./gradlew tasks
